@@ -75,7 +75,9 @@ class ActionController extends Controller
     public function show(string $id)
     {
         $action = Actions::findOrFail($id);
-        return view('action/actionShow', compact('action'));
+        //$categories = Categories::all();
+        $category_id = Categories::findOrFail($action->category_id);
+        return view('action/actionShow', compact('action', 'category_id'));
     }
 
     /**
