@@ -74,7 +74,8 @@ class ActionController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $action = Actions::findOrFail($id);
+        return view('action/actionShow', compact('action'));
     }
 
     /**
@@ -110,6 +111,8 @@ class ActionController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $action = Actions::findOrFail($id);
+        $action->delete();
+        return redirect()->route('action.index');
     }
 }
