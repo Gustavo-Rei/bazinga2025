@@ -26,4 +26,4 @@
     <button type="submit" class="btn btn-danger">Excluir</button>
    
     </form>
-    @endsection
+@endsection
