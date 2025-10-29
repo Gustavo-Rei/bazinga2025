@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\{CategoryController, ActionController};
+use App\Http\Controllers\{CategoryController, ActionController, UserActionsController};
 use Illuminate\Notifications\Action;
 use Illuminate\Support\Facades\Route;
 
@@ -18,3 +18,4 @@ Route::delete('category/{id}',[CategoryController::class, 'destroy'])->name('cat
 */
 Route::resource('category',CategoryController::class);
 Route::resource('action',ActionController::class);
+Route::resource('useraction', UserActionsController::class);
